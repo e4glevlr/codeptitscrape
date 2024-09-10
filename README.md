@@ -38,7 +38,7 @@ scrapy crawl ptitspider -O dsa.json
 ## 4. Cách cấu hình và tuỳ chỉnh
 
 ### Cấu hình cookies
-Công cụ yêu cầu cookies đã đăng nhập vào trang code.ptit.edu.vn. Để cấu hình cookies, bạn cần thêm cookies vào phần cấu hình của Scrapy, có thể chỉnh sửa trong file `settings.py` hoặc sử dụng tham số `COOKIES_ENABLED` và `COOKIES_DEBUG` để quản lý.
+Công cụ yêu cầu cookies đã đăng nhập vào trang [code.ptit.edu.vn](https://code.ptit.edu.vn/). Để cấu hình cookies, bạn cần thêm cookies vào phần cấu hình của Scrapy, có thể chỉnh sửa trong file `settings.py` hoặc sử dụng tham số `COOKIES_ENABLED` và `COOKIES_DEBUG` để quản lý.
 
 ### Tuỳ chỉnh spider
 Bạn có thể tuỳ chỉnh quá trình thu thập dữ liệu bằng cách chỉnh sửa mã nguồn spider `ptitspider.py`. Để thay đổi URL, phương thức request, hoặc các xử lý dữ liệu khác, hãy xem xét các hàm `start_requests()`, `parse()`, và `pipeline` để phù hợp với mục tiêu của bạn.
