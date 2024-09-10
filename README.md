@@ -1,44 +1,50 @@
 # CodePTIT Scrape Tool
 
-## 1. Mô tả
-CodePTIT Scrape Tool là công cụ giúp lấy tất cả dữ liệu bài tập trên trang [https://code.ptit.edu.vn/](https://code.ptit.edu.vn/). Công cụ sử dụng Scrapy để thực hiện việc thu thập dữ liệu một cách tự động.
+## 1. Description
+CodePTIT Scrape Tool is a tool that helps to collect all exercise data from the website [https://code.ptit.edu.vn/](https://code.ptit.edu.vn/). The tool uses Scrapy to automatically gather data.
 
-## 2. Yêu cầu
+## 2. Requirements
 - Python
 - Scrapy
 
-## 3. Hướng dẫn sử dụng
+## 3. Usage Instructions
 
-### Bước 1: Chuẩn bị cookies đã đăng nhập
-Công cụ yêu cầu cookies đã đăng nhập vào trang [code.ptit.edu.vn](https://code.ptit.edu.vn/) để có thể truy cập vào dữ liệu bài tập. Bạn có thể sử dụng công cụ trình duyệt để lấy cookies đăng nhập.
+### Step 1: Prepare Logged-in Cookies
+The tool requires logged-in cookies from the website [code.ptit.edu.vn](https://code.ptit.edu.vn/) to access the exercise data. You can use browser tools to obtain the logged-in cookies.
 
-### Bước 2: Cài đặt môi trường
-Đảm bảo bạn đã cài đặt Python và Scrapy. Nếu chưa, bạn có thể cài đặt Scrapy bằng lệnh:
+### Step 2: Set Up the Environment
+Make sure you have Python and Scrapy installed. If not, you can install Scrapy with the following command:
 
 ```bash
 pip install scrapy
 ```
-### Bước 3: Chạy Scrapy
-Để chạy công cụ, sử dụng lệnh sau trong terminal:
+
+### Step 3: Run Scrapy
+To run the tool, use the following command in the terminal:
 ```bash
 scrapy crawl ptitspider
 ```
-Lệnh này sẽ bắt đầu quá trình thu thập dữ liệu từ trang web.
+This command will start the data collection process from the website.
 
-### Bước 4: Xuất dữ liệu ra file
-Để xuất dữ liệu thu thập được ra file CSV, sử dụng lệnh:
+### Step 4: Export Data to a File
+To export the collected data to a CSV file, use the command:
 ```bash
 scrapy crawl ptitspider -O dsa.csv
 ```
-Bạn có thể đổi tên file xuất và định dạng (CSV hoặc JSON) tùy ý. Ví dụ để xuất ra file JSON:
+You can change the export file name and format (CSV or JSON) as desired. For example, to export to a JSON file:
 ```bash
 scrapy crawl ptitspider -O dsa.json
 ```
 
-## 4. Cách cấu hình và tuỳ chỉnh
+## 4. Configuration and Customization
 
-### Cấu hình cookies
-Công cụ yêu cầu cookies đã đăng nhập vào trang [code.ptit.edu.vn](https://code.ptit.edu.vn/). Để cấu hình cookies, bạn cần thêm cookies vào phần cấu hình của Scrapy, có thể chỉnh sửa trong file `settings.py` hoặc sử dụng tham số `COOKIES_ENABLED` và `COOKIES_DEBUG` để quản lý.
+### Configuring Cookies
+The tool requires cookies logged in to [code.ptit.edu.vn](https://code.ptit.edu.vn/). To configure cookies, add the cookies to Scrapy's settings, which can be edited in the `settings.py` file or managed using the `COOKIES_ENABLED` and `COOKIES_DEBUG` parameters.
 
-### Tuỳ chỉnh spider
-Bạn có thể tuỳ chỉnh quá trình thu thập dữ liệu bằng cách chỉnh sửa mã nguồn spider `ptitspider.py`. Để thay đổi URL, phương thức request, hoặc các xử lý dữ liệu khác, hãy xem xét các hàm `start_requests()`, `parse()`, và `pipeline` để phù hợp với mục tiêu của bạn.
+### Customizing the Spider
+You can customize the data collection process by editing the spider code `ptitspider.py`. To change the URL, request methods, or other data processing tasks, check the `start_requests()`, `parse()`, and `pipeline` functions to fit the goals of your project.
+
+## 5. Notes for Usage
+- **Cookies**: Ensure the cookies you use are still valid; otherwise, update the cookies to avoid access errors.
+
+
